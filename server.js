@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+app.set('port', (process.env.PORT || 5000));
 // const MongoClient = require('mongodb').MongoClient;
 // const url =  'mongodb://localhost:27017/happyfood';
 // var db;
@@ -14,9 +15,10 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.listen(8080, () => {
-  console.log('[[[ HAPPY_FOOD - Version: 1.0 ]]] --- Server online, aperto su porta 8080. Listening ---');
-});
+app.listen(app.get('port'), function() {
+  console.log('Server is running.');
+})
+
 
 /*
 // Connessione a MongoDB
