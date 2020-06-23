@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Happy Food</title>
+  <meta content="Indeciso su dove mangiare in suolo Toscano? Cerca il ristorante più adatto a te tramite il nostro sistema di ricerca!" name="descriptison">
+
+  <!-- Favicons -->
+  <link href="images/happyfoodlogo.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome/css/all.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="stylesheets/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="/" ><span>Happy Food</span></a></h1>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#search">Cerca un locale</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Sezione Hero ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" style="background: url(images/slide-6.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animated fadeInDown"><span>Happy</span> food</h2>
+                <p class="animated fadeInUp">Indeciso su dove mangiare in suolo Toscano? Cerca il locale di ristorazione più adatto a te tramite il nostro sistema di ricerca!</p>
+                <div>
+                  <a href="#search" class="btn-book animated fadeInUp scrollto">Cerca subito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  
+  <main id="main">
+
+    <!-- ====== Sezione di Ricerca ====== -->
+    <section id="search" class="search">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Esegui la<span> ricerca</span></h2>
+        </div>
+
+        <form onsubmit="elabora()" action="/clicked" method="POST" id="searchForm" autocomplete="off" class="was-validated" target="dummyframe" novalidate><!-- Avoid reloading page -->
+
+          <div class="form-row row d-flex justify-content-center">
+            <div class="col-md-3 mb-3">
+              <div class="form-group">
+                <select id="category" name="category" class="custom-select" placeholder="Categoria" required/>
+                  <option value="">Categoria</option>
+                  <option value="RISTORANTE">Ristorante</option>
+                  <option value="BOTTEGA">Bottega</option>
+                </select>
+                <div class="invalid-feedback">Seleziona una categoria.</div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <input type="text" id="city" name="city" class="form-control basicAutoComplete" autocomplete="off" placeholder="Città" onkeyup="validateCity();" required>
+              <div class="invalid-feedback">
+                Inserisci una città.
+              </div>
+            </div>
+            <button type="submit" name="submit" id="press"><i class="fa fa-search"></i></button>
+          </div>
+        </form> 
+
+      </div>
+
+    </section> <!-- End Sezione di Ricerca -->
+
+
+    <!-- ====== Sezione Risultati della Ricerca ====== -->
+    <section class="results">
+      <div id="resultsTitle"></div>
+
+      <div class="text-center">
+        <!-- Dati generati -->
+        <div class="list-group" id="results"></div>
+      </div>
+
+    </section><!-- End Sezione Risultati -->
+
+    <!-- ====== Mappa ====== -->
+    <div id="map"></div>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCstzrCKyqKqRBMFOwJoYEE-viwIaLF87Y&callback=initMap">
+    </script>
+    <!-- End Mappa-->
+
+  </main><!-- End Main -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Happy Food</h3>
+      <p>Il sito adatto a te per cercare qualsiasi locale dove mangiare in tutta la Toscana!</p>
+      <p id="counter">Caricamento...</p>
+      <div class="social-links">
+        <a class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Happy Food</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/venobox/venobox.min.js"></script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="vendor/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script><!--https://bootstrap-autocomplete.readthedocs.io/en/latest/-->
+  <script src="javascripts/extention/choices.js"></script>
+  <script>
+    const choices = new Choices('[data-trigger]',
+    {
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  </script>
+
+  <!-- JS Files -->
+  <script src="javascripts/main.js"></script>
+  <script src="javascripts/map.js"></script>
+  <script src="javascripts/template.js"></script>
+
+  <!-- Trick to avoid redirecting page after submit -->
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+</body>
+
+</html>

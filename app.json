@@ -1,0 +1,8 @@
+{
+  "name": "Happy Food",
+  "description": "Indeciso su dove mangiare in suolo Toscano? Cerca il locale di ristorazione più adatto a te tramite il nostro sistema di ricerca!",
+  "repository": "",
+  "logo": "",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
