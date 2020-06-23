@@ -102,6 +102,7 @@ function validateCity() {
     element.value = element.value.replace(/[^a-zA-Z ]+/, '');
 };
 
+/*
 // In /clicks viene memorizzato un array in formato json, contenente le informazioni riguardo i click.
 setInterval(function() {    // Ogni 5 secondi farà richiesta al server, richiedendo il numero di click e mostrandoli nella sezione apposita
     fetch('/clicks', {
@@ -119,7 +120,7 @@ setInterval(function() {    // Ogni 5 secondi farà richiesta al server, richied
         console.log(error);
     });
 }, 5000);
-
+*/
 
 /* Sample format data generated
 <div class="list-group-item list-group-item-action flex-column align-items-start">

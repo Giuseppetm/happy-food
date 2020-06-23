@@ -14,6 +14,10 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
+app.listen(8080, () => {
+  console.log('[[[ HAPPY_FOOD - Version: 1.0 ]]] --- Server online, aperto su porta 8080. Listening ---');
+});
+
 /*
 // Connessione a MongoDB
 MongoClient.connect(url, (err, database) => {
