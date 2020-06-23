@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 // const MongoClient = require('mongodb').MongoClient;
-const url =  'mongodb://localhost:27017/happyfood';
+// const url =  'mongodb://localhost:27017/happyfood';
 // var db;
 
 var bodyParser = require('body-parser');
