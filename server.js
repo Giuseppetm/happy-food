@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 const url =  'mongodb://localhost:27017/happyfood';
-var db;
+// var db;
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({  // to support URL-encoded bodies
@@ -14,6 +14,7 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
+/*
 // Connessione a MongoDB
 MongoClient.connect(url, (err, database) => {
     if(err) {return console.log(err);}
@@ -22,8 +23,9 @@ MongoClient.connect(url, (err, database) => {
     app.listen(8080, () => {
       console.log('[[[ HAPPY_FOOD - Version: 1.0 ]]] --- Server online, aperto su porta 8080. Listening ---');
     });
-});
+}); */
 
+/*
 // Aggiunge il click al database
 app.post('/clicked', (req, res) => {
     let city = req.body.city;
@@ -55,3 +57,5 @@ app.get('/clicks', (req, res) => {
       res.send(result);
     });
 });
+
+*/

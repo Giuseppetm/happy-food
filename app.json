@@ -1,7 +1,7 @@
 {
   "name": "Happy Food",
   "description": "Indeciso su dove mangiare in suolo Toscano? Cerca il locale di ristorazione più adatto a te tramite il nostro sistema di ricerca!",
-  "repository": "",
+  "repository": "https://github.com/Giuseppetm/happy_food",
   "logo": "",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
