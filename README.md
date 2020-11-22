@@ -1,10 +1,10 @@
-<div align="center">
+<p align="center">
   <a href="https://happyfoodwebsite.herokuapp.com/">
-    <img src="logo.png">
+    <img src="logo.png" width=350 height=120>
   </a>
-<br>
+</p>
 <hr>
-<p>
+<p align="center">
   <sup>
     <b>Description of the project</b>
     <br><br>
