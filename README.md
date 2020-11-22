@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://happyfoodwebsite.herokuapp.com/">
-    <img src="logo.png" width=350 height=120>
+    <img src="logo.png" width=380 height=120>
   </a>
 </p>
 <hr>
