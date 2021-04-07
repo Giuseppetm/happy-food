@@ -15,12 +15,12 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="vendor/venobox/venobox.css" rel="stylesheet">
   <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome/css/all.css" rel="stylesheet">
 
   <!-- Main CSS File -->
@@ -78,34 +78,36 @@
   <main id="main">
 
     <!-- ====== Sezione di Ricerca ====== -->
-    <section id="search" class="search">
+    <section id="search" class="search m-3">
       <div class="container">
 
         <div class="section-title">
           <h2>Esegui la<span> ricerca</span></h2>
         </div>
 
-        <form onsubmit="elabora()" action="/clicked" method="POST" id="searchForm" autocomplete="off" class="was-validated" target="dummyframe" novalidate><!-- Avoid reloading page -->
+        <form onsubmit="elabora()" action="/clicked" method="POST" id="searchForm" autocomplete="off" target="dummyframe" class="needs-validation" novalidate><!-- Avoid reloading page -->
 
-          <div class="form-row row d-flex justify-content-center">
-            <div class="col-md-3 mb-3">
-              <div class="form-group">
-                <select id="category" name="category" class="custom-select" placeholder="Categoria" required/>
-                  <option value="">Categoria</option>
-                  <option value="RISTORANTE">Ristorante</option>
-                  <option value="BOTTEGA">Bottega</option>
-                </select>
-                <div class="invalid-feedback">Seleziona una categoria.</div>
-              </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 mb-3">
+              <label for="category" class="form-label">Categoria</label>
+              <select id="category" name="category" placeholder="Categoria" class="form-select custom-select" required>
+                <option value="">Categoria</option>
+                <option value="RISTORANTE">Ristorante</option>
+                <option value="BOTTEGA">Bottega</option>
+              </select>
+              <div class="invalid-feedback">Seleziona una categoria.</div>
             </div>
 
-            <div class="col-md-3 mb-3">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 mb-3">
+              <label for="city" class="form-label">Città</label>
               <input type="text" id="city" name="city" class="form-control basicAutoComplete" autocomplete="off" placeholder="Città" onkeyup="validateCity();" required>
               <div class="invalid-feedback">
                 Inserisci una città.
               </div>
             </div>
-            <button type="submit" name="submit" id="press"><i class="fa fa-search"></i></button>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+              <button type="submit" name="submit" id="press" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>  
           </div>
         </form> 
 
@@ -115,7 +117,7 @@
 
 
     <!-- ====== Sezione Risultati della Ricerca ====== -->
-    <section class="results">
+    <section class="results m-3">
       <div id="resultsTitle"></div>
 
       <div class="text-center">
@@ -139,8 +141,8 @@
   <footer id="footer">
     <div class="container">
       <h3>Happy Food</h3>
-      <p>Il sito adatto a te per cercare qualsiasi locale dove mangiare in tutta la Toscana!</p>
-      <p id="counter">Caricamento...</p>
+      <p class="mb-4">Il sito adatto a te per cercare qualsiasi locale dove mangiare in tutta la Toscana!</p>
+      <!--<p id="counter">Caricamento...</p>-->
       <div class="social-links">
         <a class="twitter"><i class="bx bxl-twitter"></i></a>
         <a class="facebook"><i class="bx bxl-facebook"></i></a>

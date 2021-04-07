@@ -102,6 +102,27 @@ function validateCity() {
     element.value = element.value.replace(/[^a-zA-Z ]+/, '');
 };
 
+// Form validation
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+
 /*
 // In /clicks viene memorizzato un array in formato json, contenente le informazioni riguardo i click.
 setInterval(function() {    // Ogni 5 secondi farà richiesta al server, richiedendo il numero di click e mostrandoli nella sezione apposita

@@ -46,8 +46,13 @@
 # Search
 --------------------------------------------------------------*/
 
+@media (min-width: 576px) {
+  #press {
+    margin-top: 30px;
+  }
+}
 
-.search form.was-validated button {
+.search form.needs-validation button {
   width:40px;
   height:40px;
   white-space: nowrap;
@@ -60,7 +65,7 @@
   outline:none;
 }
 
-.search form.was-validated button:hover {
+.search form.needs-validation button:hover {
   background: #ffa012;
 }
 
@@ -670,11 +675,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+/*
 @media (max-width: 768px) {
   #hero h2 {
     font-size: 28px;
   }
 }
+*/
 
 @media (min-width: 1024px) {
   #hero p {
@@ -731,7 +738,7 @@ section {
   color: #fff;
   font-size: 14px;
   text-align: center;
-  padding: 30px 0;
+  padding: 60px 0;
 }
 
 #footer h3 {
