@@ -18,3 +18,7 @@ the researches are analyzed and then inserted into a database (MongoDB). The dat
 
 ### Some notes
 The project isn't running MongoDB at the moment, but the code I used is still in the project.
+
+### How to run the project locally
+```node server.js``` \
+The server will be running in localhost:5000
